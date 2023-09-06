@@ -1,0 +1,121 @@
+---
+import "../../styles/global.css";
+import { Image } from "astro:assets";
+import mao from "../../assets/mao-avatar.jpg";
+import Button from "../Button.astro";
+---
+
+<div class="background">
+  <article class="container mobile">
+    <h2>Cours de MAO</h2>
+    <div class="subtitle">Musique Assistée par Ordinateur</div>
+    <Image src={mao} alt="Une photo de MAO" class="mao-img" />
+    <div class="description">
+      <p>
+        Intéressé(e) par la <strong>Musique de Film</strong> ou de <strong
+          >Jeux Vidéos</strong
+        > ? Tu aimerais apprendre à <strong>composer pour l'image</strong> ? <br
+        /><br />Je te propose une découverte des
+        <strong>techniques de compositions</strong>, les <strong
+          >logiciels indispensables</strong
+        > et bien plus !
+      </p>
+    </div>
+    <Button class="button">En savoir plus</Button>
+  </article>
+  <article class="container desktop">
+    <Image src={mao} alt="Une photo de MAO" class="mao-img" />
+    <div class="description">
+      <h2>Cours de MAO</h2>
+      <div class="subtitle">Musique Assistée par Ordinateur</div>
+      <p>
+        Tu aimerais <strong>apprendre le piano</strong> ? Jouer des morceaux qui
+        te plaisent ?<br /><br />
+        J'adapte mes cours en fonction de <strong>tes objectifs</strong> et de <strong
+          >tes goûts</strong
+        >.sevrveferzeczec zeczecz eczeczeczeczecsevr errrferz czeczeczecz
+        eczeczeczeczecsev rverrrferzeczeczeczeczecz
+        eczeczeczecsevrverrrferzeczecze czeczeczecz eczeczecsevrverrrferz
+        eczeczeczeczeczeczeczeczec
+      </p>
+      <Button class="button">En savoir plus</Button>
+    </div>
+  </article>
+</div>
+
+<style>
+  .background {
+    background: linear-gradient(rgba(24, 20, 24, 0.9), rgba(24, 20, 24, 0.9)),
+      url("../../assets/mao-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: -2;
+    border-top: 1px solid var(--secondary-400);
+    border-bottom: 1px solid var(--secondary-400);
+  }
+  article {
+    color: var(--text-color-reversed);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+  .mao-img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 3rem;
+    border: 2px solid black;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-style: italic;
+    margin-bottom: 3rem;
+    opacity: 0.6;
+  }
+  .description {
+    margin-bottom: 3rem;
+    text-align: justify;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  @media (width > 480px) {
+    .mao-img {
+      height: 200px;
+    }
+  }
+
+  @media (width > 1024px) {
+    article {
+      flex-direction: row;
+      align-items: center;
+    }
+    .mao-img {
+      width: 300px;
+      height: 300px;
+      margin-right: 4rem;
+    }
+    .button {
+      margin-top: 2rem;
+    }
+    .mobile {
+      display: none;
+    }
+    .desktop {
+      display: flex;
+    }
+  }
+  @media (width > 1200px) {
+    article {
+      font-size: 1.4rem;
+    }
+  }
+</style>

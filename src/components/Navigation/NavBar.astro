@@ -1,0 +1,85 @@
+---
+import NavLink from "./NavLink.astro";
+import "../../styles/global.css";
+import Hamburger from "./Hamburger.astro";
+---
+
+<nav id="navbar">
+  <div class="logo">Benjamin Corion<span class="dot">.</span></div>
+  <div class="buttons">
+    <NavLink label="Accueil" link="/" />
+    <NavLink label="Piano" link="/piano" />
+    <NavLink label="MAO" link="/mao" />
+    <NavLink label="Qui suis-je ?" link="/qui" />
+    <NavLink label="Contact" link="/contact" />
+  </div>
+  <div class="hamburger">
+    <Hamburger />
+  </div>
+</nav>
+<nav id="dropdown" class="hide">
+  <NavLink label="Accueil" link="/" dropdown />
+  <NavLink label="Piano" link="/piano" dropdown />
+  <NavLink label="MAO" link="/mao" dropdown />
+  <NavLink label="Qui suis-je ?" link="/qui" dropdown />
+  <NavLink label="Contact" link="/contact" dropdown />
+</nav>
+
+<style>
+  #navbar {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: var(--navbar-height);
+    padding: 0 1rem;
+    background-color: var(--secondary-700);
+    z-index: 10;
+  }
+  .logo {
+    flex: 1;
+    margin: auto 0;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-color-reversed);
+  }
+  .dot {
+    color: var(--primary-400);
+  }
+  .buttons {
+    display: none;
+  }
+  .hamburger {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+  }
+  #dropdown {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    max-height: 1000px;
+    position: fixed;
+    z-index: 10;
+    top: var(--navbar-height);
+    right: 0;
+    background-color: var(--secondary-600);
+    transition: max-height 300ms ease;
+  }
+  .hide {
+    max-height: 0px !important;
+    transition: max-height 600ms ease;
+    overflow: hidden;
+  }
+  @media (width > 724px) {
+    #navbar {
+      padding-right: 0;
+    }
+    .buttons {
+      display: flex;
+    }
+    .hamburger {
+      display: none;
+    }
+  }
+</style>

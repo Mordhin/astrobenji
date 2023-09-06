@@ -1,0 +1,54 @@
+:root {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px;
+  color: var(--text-color);
+
+  --laptop-bp: 1024px;
+
+  --primary-100: #dd7987;
+  --primary-300: #da1e37;
+  --primary-400: #c71f37;
+  --primary-500: #b21e35;
+  --primary-600: #85182a;
+  --secondary-300: #655353;
+  --secondary-400: #382e2e;
+  --secondary-500: #2d2525;
+  --secondary-600: #221c1c;
+  --secondary-700: #181418;
+  --secondary-800: #0b090b;
+  --text-color: #0b090b;
+  --text-color-reversed: white;
+
+  --navbar-height: 3rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+@media (width > 480px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (width > 724px) {
+  .container {
+    max-width: 600px;
+  }
+}
+@media (width > 1024px) {
+  .container {
+    max-width: 900px;
+  }
+}
+@media (width > 1200px) {
+  .container {
+    max-width: 1100px;
+  }
+}

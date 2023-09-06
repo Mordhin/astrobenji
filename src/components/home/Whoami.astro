@@ -1,0 +1,99 @@
+---
+import "../../styles/global.css";
+import { Image } from "astro:assets";
+import avatar from "../../assets/avatar_benji.jpg";
+---
+
+<article class="container">
+  <Image src={avatar} alt="Une photo de Benjamin" class="avatar" />
+  <div>
+    <h2>Bienvenue sur mon site !</h2>
+    <p class="description">
+      Je m'appelle Benjamin, je suis <strong>Pianiste</strong>, <strong
+        >Compositeur</strong
+      > et <strong>professeur</strong>.<br /><br /> N'hésites pas à visiter <strong
+        >les différents cours</strong
+      > pour avoir plus d'informations !<br /><br />
+      <a
+        >Si tu veux en savoir plus sur mon parcours,
+        <span>&nbsp;c'est&nbsp;par&nbsp;ici&nbsp;!&nbsp;</span></a
+      >
+    </p>
+  </div>
+</article>
+
+<style>
+  article {
+    color: var(--text-color);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+  .description {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+    text-wrap: wrap;
+  }
+  .avatar {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 2rem;
+  }
+  a {
+    cursor: pointer;
+  }
+  a span {
+    position: relative;
+    font-weight: bold;
+  }
+  a span::before {
+    content: "";
+    background-color: var(--primary-100);
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  @media (width > 1024px) {
+    article {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .avatar {
+      width: 300px;
+      height: 300px;
+      margin-right: 4rem;
+    }
+    a span {
+      position: relative;
+      font-weight: bold;
+    }
+    a span::before {
+      bottom: 3px;
+      height: 6px;
+      transition: all 0.3s ease;
+    }
+    a:hover > span::before,
+    a:active > span::before {
+      bottom: 0;
+      height: 100%;
+    }
+  }
+  @media (width > 1200px) {
+    article {
+      font-size: 1.4rem;
+    }
+  }
+</style>

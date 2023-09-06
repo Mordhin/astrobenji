@@ -1,0 +1,78 @@
+---
+import "../styles/global.css";
+import { Icon } from "astro-icon";
+import Button from "./Button.astro";
+---
+
+<header>
+  <div class="title">
+    Hello !<br />
+    Je suis <span class="underline">Benjamin</span>,<br />
+    Pianiste et Professeur<span class="dot">.</span>
+  </div>
+  <Button>Je réserve un cours</Button>
+  <div class="expand">
+    <Icon name="chevron-compact-down" />
+  </div>
+</header>
+
+<style>
+  header {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("../assets/synth-banner.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    color: var(--text-color-reversed);
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+  }
+  .title {
+    margin-bottom: 1rem;
+  }
+  .underline {
+    border-bottom: 4px solid var(--primary-400);
+  }
+  .dot {
+    color: var(--primary-400);
+  }
+  .expand svg {
+    width: 2rem;
+    height: min-content;
+    fill: white;
+    margin: 1rem auto;
+    position: absolute;
+    left: calc(50% - 1rem);
+    bottom: 0;
+    cursor: pointer;
+    transition: bottom 300ms ease;
+  }
+  .expand svg:hover,
+  .expand svg:active {
+    transition: bottom 300ms ease;
+    bottom: -0.5rem;
+  }
+  @media (width > 480px) {
+    header {
+      font-size: 2.5rem;
+      padding: 2rem;
+    }
+  }
+  @media (width > 724px) {
+    header {
+      font-size: 3rem;
+      padding: 3rem;
+    }
+  }
+  @media (width > 1024px) {
+    header {
+      font-size: 4rem;
+      padding: 4rem;
+    }
+  }
+</style>

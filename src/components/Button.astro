@@ -1,0 +1,39 @@
+---
+import "../styles/global.css";
+
+const { class: className } = Astro.props;
+---
+
+<div class={className}>
+  <button>
+    <slot />
+  </button>
+</div>
+
+<style>
+  button {
+    background-color: var(--primary-400);
+    border: 1px solid var(--primary-600);
+    border-bottom: 4px solid var(--primary-600);
+    border-radius: 4px;
+    width: 15rem;
+    color: var(--text-color-reversed);
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 300ms ease;
+  }
+  button:hover,
+  button:active {
+    background-color: var(--primary-300);
+    border-bottom: 0;
+    transition: all 300ms ease;
+  }
+  div {
+    height: 3rem;
+    display: flex;
+    align-items: end;
+  }
+</style>
