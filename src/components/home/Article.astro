@@ -1,0 +1,111 @@
+---
+import "../../styles/global.css";
+import { Image } from "astro:assets";
+import Button from "../Button.astro";
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  img: ImageMetadata;
+  keyword: string;
+}
+
+const { title, subtitle, img, keyword } = Astro.props;
+---
+
+<div class="background">
+  <article class="container mobile">
+    <h2>{title}</h2>
+    <div class="subtitle">{subtitle}</div>
+    <Image src={img} alt=`Une photo de ${keyword}` class="img" />
+    <div class="description">
+      <slot />
+    </div>
+    <Button link=`/${keyword}` class="button">En savoir plus</Button>
+  </article>
+  <article class="container desktop">
+    <Image src={img} alt=`Une photo de ${keyword}` class="img" />
+    <div class="description">
+      <h2>{title}</h2>
+      <div class="subtitle">{subtitle}</div>
+      <slot />
+      <Button link=`/${keyword}` class="button">En savoir plus</Button>
+    </div>
+  </article>
+</div>
+
+<style>
+  .background {
+    background: linear-gradient(rgba(24, 20, 24, 0.9), rgba(24, 20, 24, 0.9)),
+      url("../../assets/mao-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    border-top: 1px solid var(--secondary-400);
+    border-bottom: 1px solid var(--secondary-400);
+  }
+  article {
+    color: var(--text-color-reversed);
+    height: var(--article-height-mobile);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+  .img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 3rem;
+    border: 2px solid black;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-style: italic;
+    margin-bottom: 3rem;
+    opacity: 0.6;
+  }
+  .description {
+    margin-bottom: 3rem;
+    text-align: justify;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  @media (width > 480px) {
+    .img {
+      height: 200px;
+    }
+  }
+
+  @media (width > 1024px) {
+    article {
+      height: var(--article-height-desktop);
+      flex-direction: row;
+      align-items: center;
+    }
+    .img {
+      width: 300px;
+      height: 300px;
+      margin-right: 4rem;
+    }
+    .button {
+      margin-top: 2rem;
+    }
+    .mobile {
+      display: none;
+    }
+    .desktop {
+      display: flex;
+    }
+  }
+  @media (width > 1200px) {
+    article {
+      font-size: 1.4rem;
+    }
+  }
+</style>

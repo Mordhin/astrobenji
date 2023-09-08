@@ -1,111 +1,15 @@
 ---
 import "../../styles/global.css";
-import { Image } from "astro:assets";
+import Article from "./Article.astro";
 import piano from "../../assets/piano-avatar.jpg";
-import Button from "../Button.astro";
 ---
 
-<div class="background">
-  <article class="container mobile">
-    <h2>Cours de piano</h2>
-    <Image src={piano} alt="Une photo de piano" class="piano-img" />
-    <div class="description">
-      <p>
-        Tu aimerais <strong>apprendre le piano</strong> ? Jouer des morceaux qui
-        te plaisent ?<br /><br />
-        J'adapte mes cours en fonction de <strong>tes objectifs</strong> et de <strong
-          >tes goûts</strong
-        >.
-      </p>
-    </div>
-    <Button class="button">En savoir plus</Button>
-  </article>
-  <article class="container desktop">
-    <Image src={piano} alt="Une photo de piano" class="piano-img" />
-    <div class="description">
-      <h2>Cours de piano</h2>
-      <p>
-        Tu aimerais <strong>apprendre le piano</strong> ? Jouer des morceaux qui
-        te plaisent ?<br /><br />
-        J'adapte mes cours en fonction de <strong>tes objectifs</strong> et de <strong
-          >tes goûts</strong
-        >.sevrverrrferzeczec zeczecz eczeczeczeczecsevr errrferz czeczeczecz
-        eczeczeczeczecsev rverrrferzeczeczeczeczecz
-        eczeczeczecsevrverrrferzeczecze czeczeczecz eczeczecsevrverrrferz
-        eczeczeczeczeczeczeczeczec
-      </p>
-      <Button class="button">En savoir plus</Button>
-    </div>
-  </article>
-</div>
-
-<style>
-  .background {
-    background: linear-gradient(rgba(20, 16, 20, 0.8), rgba(20, 16, 20, 0.8)),
-      url("../../assets/piano-bg.jpg");
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    z-index: -2;
-  }
-  article {
-    color: var(--text-color-reversed);
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 1.2rem;
-    padding: 1rem;
-  }
-  .piano-img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    margin-bottom: 3rem;
-    border: 2px solid black;
-  }
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 3rem;
-  }
-  .description {
-    margin-bottom: 3rem;
-    text-align: justify;
-  }
-
-  .desktop {
-    display: none;
-  }
-
-  @media (width > 480px) {
-    .piano-img {
-      height: 200px;
-    }
-  }
-
-  @media (width > 1024px) {
-    article {
-      flex-direction: row;
-      align-items: center;
-    }
-    .piano-img {
-      width: 300px;
-      height: 300px;
-      margin-right: 4rem;
-    }
-    .button {
-      margin-top: 2rem;
-    }
-    .mobile {
-      display: none;
-    }
-    .desktop {
-      display: flex;
-    }
-  }
-  @media (width > 1200px) {
-    article {
-      font-size: 1.4rem;
-    }
-  }
-</style>
+<Article title="Cours de piano" img={piano} keyword="piano">
+  <p>
+    Tu aimerais <strong>apprendre le piano</strong> ? Jouer des morceaux qui te plaisent
+    ?<br /><br />
+    J'adapte mes cours en fonction de <strong>tes objectifs</strong> et de <strong
+      >tes goûts</strong
+    >.
+  </p>
+</Article>

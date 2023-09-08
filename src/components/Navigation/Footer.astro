@@ -1,15 +1,48 @@
 ---
 import "../../styles/global.css";
+import { Icon } from "astro-icon";
 ---
 
-<footer>Je suis un footer</footer>
+<footer>
+  <div>
+    Developed by Julien Corion. <br />
+    © 2023 Benjamin Corion. All rights reserved.
+  </div>
+  <div class="icons">
+    <Icon name="youtube" />
+    <Icon name="instagram" />
+    <Icon name="linkedin" />
+  </div>
+</footer>
 <style>
   footer {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 50vh;
+    font-size: 0.6rem;
+    height: 100px;
     color: var(--text-color-reversed);
     background-color: var(--secondary-700);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .icons {
+    display: flex;
+    align-items: center;
+  }
+  .icons svg {
+    width: 20px;
+    height: 20px;
+    margin-left: 0.8rem;
+  }
+  @media (width > 480px) {
+    footer {
+      font-size: 0.8rem;
+    }
+    .icons svg {
+      width: 24px;
+      height: 24px;
+      margin-left: 1rem;
+    }
   }
 </style>

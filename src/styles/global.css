@@ -20,6 +20,8 @@
   --text-color-reversed: white;
 
   --navbar-height: 3rem;
+  --article-height-mobile: 100vh;
+  --article-height-desktop: 75vh;
 }
 
 * {

@@ -34,6 +34,7 @@ import Hamburger from "./Hamburger.astro";
     padding: 0 1rem;
     background-color: var(--secondary-700);
     z-index: 10;
+    transition: background-color 300ms ease;
   }
   .logo {
     flex: 1;
@@ -83,3 +84,19 @@ import Hamburger from "./Hamburger.astro";
     }
   }
 </style>
+<script>
+  let scroll = false;
+  const navbar = document.getElementById("navbar");
+
+  const checkScroll = () => {
+    if (!scroll && window.scrollY > 1) {
+      scroll = true;
+      if (navbar) navbar.style.backgroundColor = "var(--secondary-600)";
+    } else if (scroll && window.scrollY <= 1) {
+      scroll = false;
+      if (navbar) navbar.style.backgroundColor = "transparent";
+    }
+  };
+
+  window.addEventListener("scroll", checkScroll);
+</script>
