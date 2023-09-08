@@ -57,8 +57,10 @@ import "../../styles/global.css";
   }
 </style>
 <script>
+  let menuOpen = false;
   const menu = document.getElementById("hamburger");
   const dropdown = document.getElementById("dropdown");
+  const navbar = document.getElementById("navbar");
   const top = document.getElementById("top");
   const mid = document.getElementById("mid");
   const bot = document.getElementById("bot");
@@ -69,6 +71,9 @@ import "../../styles/global.css";
     bot?.classList.toggle("bot");
     bot?.classList.toggle("bot-alt");
     dropdown?.classList.toggle("hide");
+    menuOpen = !menuOpen;
+    if (navbar && menuOpen)
+      navbar.style.backgroundColor = "var(--secondary-600)";
   };
   menu?.addEventListener("click", toggleMenu);
 </script>
