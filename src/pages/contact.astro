@@ -1,0 +1,79 @@
+---
+import Main from "../layouts/Main.astro";
+import Article from "../components/Article.astro";
+import { Image } from "astro:assets";
+import contact from "../assets/contact.svg";
+---
+
+<Main>
+  <Article class="flex">
+    <div class="description">
+      <h2>Tarifs & Contact</h2>
+      <ul>
+        <strong>Je propose deux types de cours :</strong>
+        <li>45 minutes (recommandé pour les enfants débutants)</li>
+        <li>1 heure</li>
+      </ul>
+      <p>
+        Les cours se font à votre domicile. <br /><br />
+        Paiement par CESU+ (Accordant un avantage fiscal de 50%, après cotisations)<br
+        /><br />
+      </p>
+      <div class="contact">
+        <strong>Comment me joindre ?</strong>
+        <div class="accent">Benjamin.corion.note@gmail.com</div>
+        <div class="ou">OU</div>
+        <div class="accent">SMS au 06 28 38 83 73</div>
+        <p>Nous fixerons un créneau pour un appel téléphonique.</p>
+      </div>
+    </div>
+    <Image src={contact} alt="" class="img" />
+  </Article>
+</Main>
+<style>
+  h2 {
+    margin: 2rem 0;
+  }
+  p {
+    text-align: justify;
+  }
+  ul {
+    border: 1px solid black;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  li {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+  }
+  .img {
+    width: 100%;
+    max-width: 400px;
+    height: fit-content;
+    object-fit: contain;
+    margin: 2rem auto;
+  }
+  .contact {
+    margin: 2rem 0;
+  }
+  .accent {
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 5px;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    padding: 1rem;
+    max-width: 500px;
+  }
+  .ou {
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+  }
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+</style>

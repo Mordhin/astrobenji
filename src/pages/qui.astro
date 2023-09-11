@@ -1,0 +1,73 @@
+---
+import Main from "../layouts/Main.astro";
+import Article from "../components/Article.astro";
+import { Image } from "astro:assets";
+import benji from "../assets/benji.png";
+---
+
+<Main>
+  <Article class="flex">
+    <div class="description">
+      <h2>Qui suis-je ?</h2>
+      <p>
+        <strong
+          >Benjamin, 27ans. Pianiste, claviériste et compositeur professionnel.</strong
+        ><br /><br />
+        J'ai appris le solfège et le piano avec des professeurs particuliers dès
+        mes 7ans, pianotant entre <strong>musique classique</strong> et <strong
+          >musique moderne</strong
+        >. <br /><br />
+        Je me suis professionnalisé à partir de 2019, en étant admis à l'école de
+        musique
+        <strong>'EF2M'</strong> à Tourcoing. Pendant les 2 années de cursus pro,
+        j'y ai développé ma musicalité, ma théorie musicale, et ma pratique des pianos/claviers
+        en étudiant la musique actuelle (pop, rock, blues, jazz...), entouré de professeurs
+        expérimentés et renommés. <br /><br />
+        En septembre 2022, j’ai poursuivi mon apprentissage à la <strong
+          >Yamaha Music School</strong
+        > de Valencia (Espagne). J’y ai appris la composition de musique à l’image,
+        auprès de compositeurs réputés, obtenant le diplôme en Juin 2023. <br
+        /><br />
+        En Septembre 2023, j’intègre la formation <strong
+          >« Polyphonies »</strong
+        > afin de maîtriser l’orchestration, l’écriture et la composition pour ensemble
+        musical. <br /><br />
+        Aujourd'hui, je souhaite à mon tour
+        <strong>partager mes connaissances et expériences</strong>, en vous
+        proposant des cours particuliers de <strong>Piano</strong> ou de <strong
+          >Musique assistée par Ordinateur</strong
+        > (MAO).
+      </p>
+    </div>
+    <Image src={benji} alt="Une photo de Benjamin" class="img" />
+  </Article>
+</Main>
+<style>
+  h2 {
+    margin: 2rem 0;
+  }
+  p {
+    text-align: justify;
+  }
+  .img {
+    width: 100%;
+    height: fit-content;
+    object-fit: contain;
+    margin: 2rem 0;
+  }
+  @media (width > 1024px) {
+    .flex {
+      display: flex;
+      flex-direction: row-reverse;
+
+      align-items: center;
+    }
+    .img {
+      width: 300px;
+      height: 100%;
+      object-fit: cover;
+      margin: 0;
+      margin-right: 2rem;
+    }
+  }
+</style>

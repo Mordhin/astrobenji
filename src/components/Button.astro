@@ -2,15 +2,15 @@
 import "../styles/global.css";
 
 interface Props {
-  link?: string;
+  href?: any;
   class?: any;
 }
 
-const { link, class: className } = Astro.props;
+const { href: path, class: className } = Astro.props;
 ---
 
 <div class={className}>
-  <a href={link}>
+  <a href={path}>
     <slot />
   </a>
 </div>

@@ -1,0 +1,81 @@
+---
+import Main from "../layouts/Main.astro";
+import Article from "../components/Article.astro";
+import { Image } from "astro:assets";
+import piano from "../assets/piano-avatar.jpg";
+---
+
+<Main>
+  <Article class="flex">
+    <div class="description">
+      <h2>Cours de piano</h2>
+      <p>
+        <strong
+          >Je vous propose un programme personnalisé, ludique, en fonction de
+          vos envies et de votre niveau.</strong
+        >
+        <br /><br />
+        Du fait qu'il soit personnel, ce programme est adapté aux <strong
+          >enfants</strong
+        > (à partir de 6ans) et aux <strong>adultes</strong>. <br /><br />
+        Différents styles peuvent être abordés (pop, rock, blues, classique, musique
+        de film..), pour vous permettre de jouer des <strong
+          >morceaux qui vous plaisent</strong
+        >. <br /><br />
+        Nous pourrons travailler plusieurs méthodes pour apprendre le piano : relever
+        à l'oreille un morceau, ou de manière traditionnelle avec une partition.
+        <br /><br />
+        Ensemble, nous découvrirons la <strong>technique</strong> et la base du
+        <strong>solfège</strong>, pour vous permettre d'être <strong
+          >autonome</strong
+        > sur un piano. <br /><br />
+        Si vous souhaitez aller plus loin dans la compréhension de la musique, nous
+        développerons le solfège, l'harmonie, l'ear training... <br /><br />
+        L'objectif est <strong>d'apprendre tout en s'amusant</strong> et en prenant
+        du <strong>plaisir sur le piano</strong>. <br /><br />
+      </p>
+      <ul>
+        <strong>Je propose deux types de cours :</strong>
+        <li>45 minutes (recommandé pour les enfants débutants)</li>
+        <li>1 heure</li>
+      </ul>
+    </div>
+    <Image src={piano} alt="Une photo de Piano" class="img" />
+  </Article>
+</Main>
+<style>
+  h2 {
+    margin: 2rem 0;
+  }
+  p {
+    text-align: justify;
+  }
+  .img {
+    width: 100%;
+    height: fit-content;
+    object-fit: contain;
+    margin: 2rem 0;
+  }
+  ul {
+    border: 1px solid black;
+    padding: 1rem;
+  }
+  li {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+  }
+  @media (width > 1024px) {
+    .flex {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+    .img {
+      width: 300px;
+      height: 100%;
+      object-fit: cover;
+      margin: 0;
+      margin-right: 2rem;
+    }
+  }
+</style>

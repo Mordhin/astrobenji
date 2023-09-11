@@ -1,0 +1,110 @@
+---
+import "../styles/global.css";
+import Main from "../layouts/Main.astro";
+import Article from "../components/Article.astro";
+import { Image } from "astro:assets";
+import mao from "../assets/mao-avatar.jpg";
+import { Icon } from "astro-icon";
+---
+
+<Main>
+  <Article class="flex">
+    <div class="description">
+      <h2>Cours de MAO</h2>
+      <p>
+        <strong
+          >Je propose des cours de MAO et d’initiation de composition de musique
+          à l’image/jeux vidéo.</strong
+        >
+        <br /><br />
+        Nous travaillerons <strong>la maîtrise du logiciel</strong>, <strong
+          >les différents effets</strong
+        >, <strong>instruments virtuels</strong>, <strong>mixage</strong>… <br
+        /><br />
+        Nous verrons comment composer une musique pour <strong>une scène</strong
+        > ou <strong>un jeu vidéo</strong>, quelles sont les techniques
+        utilisées, quels instruments… <br /><br />
+        L’objectif sera de <strong>composer votre musique</strong> pour des petites
+        scènes issues de film, ou des musiques d’ambiance de jeux vidéo. <br
+        /><br />
+        Ce cours est accessible <strong>à partir de 14ans</strong>. <br /><br />
+      </p>
+      <ul>
+        <strong>Je propose deux types de cours :</strong>
+        <li>45 minutes (recommandé pour les enfants débutants)</li>
+        <li>1 heure</li>
+      </ul>
+      <div class="warning">
+        <Icon name="warning" />
+        <p>
+          Il est nécessaire d’avoir un DAW (station de travail). <br />
+          Personnellement, j’utilise Cubase 12, mais des logiciels gratuits comme
+          Reaper<br />
+          sont très efficaces. <br />
+          Je conseille vivement d’avoir un ordinateur capable de faire tourner les
+          différents logiciels.
+        </p>
+      </div>
+    </div>
+    <Image src={mao} alt="Une photo de MAO" class="img" />
+  </Article>
+</Main>
+<style>
+  h2 {
+    margin: 2rem 0;
+  }
+  p {
+    text-align: justify;
+  }
+  .img {
+    width: 100%;
+    height: fit-content;
+    object-fit: contain;
+    margin: 2rem 0;
+  }
+  ul {
+    border: 1px solid black;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  li {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+  }
+  .warning {
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--warning);
+    background-color: var(--warning-light);
+    padding: 1rem;
+  }
+  .warning svg {
+    display: none;
+    width: 4rem;
+    margin-right: 1rem;
+    fill: var(--warning);
+  }
+  @media (width > 480px) {
+    .warning {
+      font-size: 1rem;
+    }
+    .warning svg {
+      display: block;
+    }
+  }
+  @media (width > 1024px) {
+    .flex {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+    .img {
+      width: 300px;
+      height: 100%;
+      object-fit: cover;
+      margin: 0;
+      margin-right: 2rem;
+    }
+  }
+</style>

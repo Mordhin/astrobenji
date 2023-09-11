@@ -11,9 +11,10 @@ interface Props {
 }
 
 const { title, subtitle, img, keyword } = Astro.props;
+const path = "/" + keyword;
 ---
 
-<div class="background">
+<div class=`bg-${keyword}`>
   <article class="container mobile">
     <h2>{title}</h2>
     <div class="subtitle">{subtitle}</div>
@@ -21,7 +22,7 @@ const { title, subtitle, img, keyword } = Astro.props;
     <div class="description">
       <slot />
     </div>
-    <Button link=`/${keyword}` class="button">En savoir plus</Button>
+    <Button href={path} class="button">En savoir plus</Button>
   </article>
   <article class="container desktop">
     <Image src={img} alt=`Une photo de ${keyword}` class="img" />
@@ -29,19 +30,28 @@ const { title, subtitle, img, keyword } = Astro.props;
       <h2>{title}</h2>
       <div class="subtitle">{subtitle}</div>
       <slot />
-      <Button link=`/${keyword}` class="button">En savoir plus</Button>
+      <Button href={path} class="button">En savoir plus</Button>
     </div>
   </article>
 </div>
 
 <style>
-  .background {
+  .bg-piano,
+  .bg-mao {
+    border-top: 1px solid var(--secondary-400);
+    border-bottom: 1px solid var(--secondary-400);
+  }
+  .bg-piano {
+    background: linear-gradient(rgba(24, 20, 24, 0.9), rgba(24, 20, 24, 0.9)),
+      url("../../assets/piano-bg.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+  .bg-mao {
     background: linear-gradient(rgba(24, 20, 24, 0.9), rgba(24, 20, 24, 0.9)),
       url("../../assets/mao-bg.jpg");
     background-position: center;
     background-size: cover;
-    border-top: 1px solid var(--secondary-400);
-    border-bottom: 1px solid var(--secondary-400);
   }
   article {
     color: var(--text-color-reversed);

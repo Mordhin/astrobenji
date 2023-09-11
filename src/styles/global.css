@@ -19,7 +19,11 @@
   --text-color: #0b090b;
   --text-color-reversed: white;
 
+  --warning-light: #fef7e7;
+  --warning: #f9b115;
+
   --navbar-height: 3rem;
+  --footer-height: 100px;
   --article-height-mobile: 100vh;
   --article-height-desktop: 75vh;
 }

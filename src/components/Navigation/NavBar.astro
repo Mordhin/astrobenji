@@ -11,7 +11,7 @@ import Hamburger from "./Hamburger.astro";
     <NavLink label="Piano" link="/piano" />
     <NavLink label="MAO" link="/mao" />
     <NavLink label="Qui suis-je ?" link="/qui" />
-    <NavLink label="Contact" link="/contact" />
+    <NavLink label="Tarifs & Contact" link="/contact" />
   </div>
   <div class="hamburger">
     <Hamburger />
@@ -22,7 +22,7 @@ import Hamburger from "./Hamburger.astro";
   <NavLink label="Piano" link="/piano" dropdown />
   <NavLink label="MAO" link="/mao" dropdown />
   <NavLink label="Qui suis-je ?" link="/qui" dropdown />
-  <NavLink label="Contact" link="/contact" dropdown />
+  <NavLink label="Tarifs & Contact" link="/contact" dropdown />
 </nav>
 
 <style>
@@ -87,6 +87,7 @@ import Hamburger from "./Hamburger.astro";
 <script>
   let scroll = false;
   const navbar = document.getElementById("navbar");
+  const banner = document.getElementById("banner");
 
   const checkScroll = () => {
     if (!scroll && window.scrollY > 1) {
@@ -98,5 +99,9 @@ import Hamburger from "./Hamburger.astro";
     }
   };
 
-  window.addEventListener("scroll", checkScroll);
+  if (banner) {
+    window.addEventListener("scroll", checkScroll);
+  } else {
+    if (navbar) navbar.style.backgroundColor = "var(--secondary-600)";
+  }
 </script>

@@ -1,0 +1,16 @@
+---
+import "../styles/global.css";
+
+const { class: className } = Astro.props;
+---
+
+<article class=`container ${className}`>
+  <slot />
+</article>
+<style>
+  article {
+    padding: 1rem;
+    padding-top: var(--navbar-height);
+    min-height: calc(100vh - var(--footer-height));
+  }
+</style>
