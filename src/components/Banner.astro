@@ -5,18 +5,21 @@ import Button from "./Button.astro";
 ---
 
 <header id="banner">
-  <div class="title">
+  <h1 class="title">
     Hello !<br />
     Je suis <span class="underline">Benjamin</span>,<br />
     Pianiste et Professeur<span class="dot">.</span>
-  </div>
-  <Button href="/pricing">Je réserve un cours</Button>
+  </h1>
+  <Button href="/contact">Je réserve un cours</Button>
   <div class="expand">
     <Icon name="chevron-compact-down" />
   </div>
 </header>
 
 <style>
+  h1 {
+    font-size: 2rem;
+  }
   header {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -28,7 +31,6 @@ import Button from "./Button.astro";
     justify-content: center;
     align-items: left;
     color: var(--text-color-reversed);
-    font-size: 2rem;
     font-weight: bold;
     padding: 1rem;
   }
@@ -57,22 +59,28 @@ import Button from "./Button.astro";
     transition: bottom 300ms ease;
     bottom: -0.5rem;
   }
-  @media (width > 480px) {
+  @media (width >= 480px) {
     header {
-      font-size: 2.5rem;
       padding: 2rem;
     }
-  }
-  @media (width > 724px) {
-    header {
-      font-size: 3rem;
-      padding: 3rem;
+    h1 {
+      font-size: 2.5rem;
     }
   }
-  @media (width > 1024px) {
+  @media (width >= 724px) {
     header {
-      font-size: 4rem;
+      padding: 3rem;
+    }
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  @media (width >= 1024px) {
+    header {
       padding: 4rem;
+    }
+    h1 {
+      font-size: 4rem;
     }
   }
 </style>

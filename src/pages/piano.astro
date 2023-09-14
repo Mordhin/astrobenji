@@ -3,6 +3,7 @@ import Main from "../layouts/Main.astro";
 import Article from "../components/Article.astro";
 import { Image } from "astro:assets";
 import piano from "../assets/piano-avatar.jpg";
+import Button from "../components/Button.astro";
 ---
 
 <Main>
@@ -35,10 +36,12 @@ import piano from "../assets/piano-avatar.jpg";
         du <strong>plaisir sur le piano</strong>. <br /><br />
       </p>
       <ul>
-        <strong>Je propose deux types de cours :</strong>
-        <li>45 minutes (recommandé pour les enfants débutants)</li>
+        <strong>Je propose plusieurs formats de cours :</strong>
+        <li>30 minutes (Réservé aux enfants)</li>
+        <li>45 minutes</li>
         <li>1 heure</li>
       </ul>
+      <Button href="/contact" class="button">Je réserve un cours</Button>
     </div>
     <Image src={piano} alt="Une photo de Piano" class="img" />
   </Article>
@@ -54,7 +57,7 @@ import piano from "../assets/piano-avatar.jpg";
     width: 100%;
     height: fit-content;
     object-fit: contain;
-    margin: 2rem 0;
+    margin-bottom: 2rem;
   }
   ul {
     border: 1px solid black;
@@ -64,7 +67,11 @@ import piano from "../assets/piano-avatar.jpg";
     margin-left: 1rem;
     margin-top: 0.5rem;
   }
-  @media (width > 1024px) {
+  .button {
+    width: fit-content;
+    margin: 2rem auto;
+  }
+  @media (width >= 1024px) {
     .flex {
       display: flex;
       flex-direction: row-reverse;

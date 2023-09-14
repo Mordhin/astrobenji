@@ -9,18 +9,31 @@ import contact from "../assets/contact.svg";
   <Article class="flex">
     <div class="description">
       <h2>Tarifs & Contact</h2>
-      <ul>
-        <strong>Je propose deux types de cours :</strong>
-        <li>45 minutes (recommandé pour les enfants débutants)</li>
-        <li>1 heure</li>
-      </ul>
+      <table>
+        <caption>Tarifs des différents cours</caption>
+        <tr>
+          <td></td><th scope="col">Piano</th><th scope="col">MAO</th>
+        </tr>
+        <tr>
+          <th scope="row">30 min</th><td>15€<br /><i>Réservé aux enfants</i></td
+          ><td class="unavailable">non disponible</td>
+        </tr>
+        <tr>
+          <th scope="row">45 min</th><td>23€</td><td class="unavailable"
+            >non disponible</td
+          >
+        </tr>
+        <tr>
+          <th scope="row">1 heure</th><td>30€</td><td>30€</td>
+        </tr>
+      </table>
       <p>
         Les cours se font à votre domicile. <br /><br />
         Paiement par CESU+ (Accordant un avantage fiscal de 50%, après cotisations)<br
         /><br />
       </p>
       <div class="contact">
-        <strong>Comment me joindre ?</strong>
+        <h2>Comment me joindre ?</h2>
         <div class="accent">Benjamin.corion.note@gmail.com</div>
         <div class="ou">OU</div>
         <div class="accent">SMS au 06 28 38 83 73</div>
@@ -75,5 +88,43 @@ import contact from "../assets/contact.svg";
   .flex {
     display: flex;
     flex-direction: column;
+  }
+  table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+  th {
+    color: var(--text-color-reversed);
+    background: var(--secondary-300);
+  }
+  caption {
+    caption-side: bottom;
+  }
+  th,
+  td {
+    border: 1px black solid;
+    padding: 0.25rem 0.5rem;
+    text-align: center;
+  }
+  table td:first-of-type {
+    border-top: none;
+    border-left: none;
+  }
+  .unavailable {
+    color: rgb(140, 140, 140);
+    background-color: rgb(240, 240, 240);
+  }
+  @media (width >= 480px) {
+    th,
+    td {
+      padding: 0.5rem 1rem;
+    }
+  }
+  @media (width >= 1024px) {
+    th,
+    td {
+      padding: 1rem 2rem;
+    }
   }
 </style>

@@ -5,6 +5,7 @@ import Article from "../components/Article.astro";
 import { Image } from "astro:assets";
 import mao from "../assets/mao-avatar.jpg";
 import { Icon } from "astro-icon";
+import Button from "../components/Button.astro";
 ---
 
 <Main>
@@ -30,10 +31,10 @@ import { Icon } from "astro-icon";
         Ce cours est accessible <strong>à partir de 14ans</strong>. <br /><br />
       </p>
       <ul>
-        <strong>Je propose deux types de cours :</strong>
-        <li>45 minutes (recommandé pour les enfants débutants)</li>
+        <strong>Les cours MAO sont au format :</strong>
         <li>1 heure</li>
       </ul>
+      <Button href="/contact" class="button">Je réserve un cours</Button>
       <div class="warning">
         <Icon name="warning" />
         <p>
@@ -60,7 +61,7 @@ import { Icon } from "astro-icon";
     width: 100%;
     height: fit-content;
     object-fit: contain;
-    margin: 2rem 0;
+    margin-bottom: 2rem;
   }
   ul {
     border: 1px solid black;
@@ -71,6 +72,10 @@ import { Icon } from "astro-icon";
     margin-left: 1rem;
     margin-top: 0.5rem;
   }
+  .button {
+    width: fit-content;
+    margin: 2rem auto;
+  }
   .warning {
     font-size: 0.8rem;
     display: flex;
@@ -78,6 +83,7 @@ import { Icon } from "astro-icon";
     border: 1px solid var(--warning);
     background-color: var(--warning-light);
     padding: 1rem;
+    margin-bottom: 2rem;
   }
   .warning svg {
     display: none;
@@ -85,7 +91,7 @@ import { Icon } from "astro-icon";
     margin-right: 1rem;
     fill: var(--warning);
   }
-  @media (width > 480px) {
+  @media (width >= 480px) {
     .warning {
       font-size: 1rem;
     }
@@ -93,7 +99,7 @@ import { Icon } from "astro-icon";
       display: block;
     }
   }
-  @media (width > 1024px) {
+  @media (width >= 1024px) {
     .flex {
       display: flex;
       flex-direction: row-reverse;
