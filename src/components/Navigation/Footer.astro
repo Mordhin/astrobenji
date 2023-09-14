@@ -9,7 +9,9 @@ import { Icon } from "astro-icon";
     © 2023 Benjamin Corion. All rights reserved.
   </div>
   <div class="icons">
-    <Icon name="youtube" />
+    <a href="https://www.youtube.com/@BenjaminCorionMusic" target="_blank"
+      ><Icon name="youtube" /></a
+    >
     <Icon name="instagram" />
     <Icon name="linkedin" />
   </div>
@@ -25,6 +27,11 @@ import { Icon } from "astro-icon";
     background-color: var(--secondary-700);
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    color: color: var(--text-color-reversed);
   }
   .icons {
     display: flex;
